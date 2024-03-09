@@ -16,19 +16,18 @@ function addTask(){
     inputBox.value = "";
 }
 
-function handleKeyPress(event) {
-    if (event.key === 'Enter') {
+function handleKeyPress(event){
+    if (event.key === 'Enter'){
         addTask();
     }
 }
-
 inputBox.addEventListener("keypress", handleKeyPress);
 
-listContainer.addEventListener("click", function(e){
-    if(e.target.tagName == "LI"){
-        e.target.classList.toggle("checked");
+listContainer.addEventListener("click", function(event){
+    if(event.target.tagName == "LI"){
+        event.target.classList.toggle("checked");
     }
     else if(e.target.tagName == "LI"){
-        e.target.parentElement.remove();
+        event.target.parentElement.remove();
     }
 }, false);
