@@ -29,7 +29,7 @@ listContainer.addEventListener("click", function(event){
         event.target.classList.toggle("checked");
         saveData();
     }
-    else if(e.target.tagName == "LI"){
+    else if(e.target.tagName == "SPAN"){
         event.target.parentElement.remove();
         saveData();
     }
