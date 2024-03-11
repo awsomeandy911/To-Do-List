@@ -1,6 +1,7 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
+//function to add users tasks to to-do list
 function addTask(){
     if(inputBox.value === ''){
         alert("You must write a task!");
@@ -17,6 +18,7 @@ function addTask(){
     saveData();
 }
 
+//function to allow user to trigger 'addTask' function by pressing the "Enter" key
 function handleKeyPress(event){
     if (event.key === 'Enter'){
         addTask();
@@ -24,6 +26,7 @@ function handleKeyPress(event){
 }
 inputBox.addEventListener("keypress", handleKeyPress);
 
+//event listener for the to-do list, toggling the checked class and saving data
 listContainer.addEventListener("click", function(event){
     if(event.target.tagName == "LI"){
         event.target.classList.toggle("checked");
@@ -35,10 +38,12 @@ listContainer.addEventListener("click", function(event){
     }
 }, false);
 
+//function to save tasks to localStorage
 function saveData(){
     localStorage.setItem("data", listContainer.innerHTML);
 }
 
+//function to show saved tasks
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
