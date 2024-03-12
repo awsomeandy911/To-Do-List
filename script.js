@@ -32,7 +32,7 @@ listContainer.addEventListener("click", function(event){
         event.target.classList.toggle("checked");
         saveData();
     }
-    else if(e.target.tagName == "SPAN"){
+    else if(event.target.tagName == "SPAN"){
         event.target.parentElement.remove();
         saveData();
     }
